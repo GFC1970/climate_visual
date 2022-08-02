@@ -8,21 +8,6 @@
 # Load libraries functions
 source("scripts/0_Functions.R")
 
-# Load data from csv file downloaded from NASA
-df <- read_csv("data/GLB.Ts+dSST.csv",
-
-  # remove top header row
-  skip = 1,
-
-  # Show NA values for *** entries
-  na = "***",
-
-  # hide data details when loading
-  show_col_types = FALSE) %>%
-
-  # clean variable names
-  janitor::clean_names()
-
 # Select required variables
 df %>%
   select(year, temp = `j_d`) %>%

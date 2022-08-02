@@ -1,4 +1,8 @@
-# Script with functions for setting ggplot plots and exporting to image file
+# Purpose:      Functions for setting ggplot plots and exporting to image file
+# Created by:   Cox, Graham
+# Created on:   2022-MM-DD
+
+# Script with
 
 # Load libraries
 library(tidyverse)
@@ -13,7 +17,6 @@ font_add_google(family = "roboto-slab", "Roboto Slab")
 font_add_google(family = "roboto-condensed", "Roboto Condensed")
 
 showtext_auto()
-
 
 #' theme_gfc
 #'

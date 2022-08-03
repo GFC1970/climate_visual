@@ -1,0 +1,62 @@
+---
+title: "Global Land-Ocean Temperature Index Data Exploration"
+output: html_notebook
+---
+
+```{r setup}
+library(tidyverse)
+
+```
+## Load Data
+
+Data has been downloaded from the link below. CSV file has been saved locally in data sub-folder.
+
+<https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv>
+
+```{r firstLoad}
+df <- read_csv("../data/GLB.Ts+dSST.csv")
+
+head(df)
+
+```
+
+First row of csv file contains header text that is not required, reload data skipping the first row.
+
+```{r loadDataAndSkip}
+df <- read_csv("../data/GLB.Ts+dSST.csv",
+               skip = 1)
+
+head(df)
+```
+
+NA values appear as three asterisks, so reload data and convert *** to NA values
+
+```{r loadDataAndSkipAndNA}
+df <- read_csv("../data/GLB.Ts+dSST.csv",
+               skip = 1,
+               na = "***")
+
+head(df)
+```
+
+19 variables are shown, looking at the data types, all appear to be numeric. 
+
+```{r}
+str(df)
+```
+
+Two variables that contain - characters, use the clean_names() function from the janitor package to tidy the variable names. 
+
+```{r}
+df <- read_csv("../data/GLB.Ts+dSST.csv",
+               skip = 1,
+               na = "***")
+
+df <- df %>% janitor::clean_names()
+
+head(df)
+
+str(df, give.attr = FALSE)
+
+```
+

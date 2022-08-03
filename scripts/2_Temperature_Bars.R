@@ -25,14 +25,6 @@ df <- df %>%
   select(year, temp = `j_d`) %>%
   drop_na()
 
-annotation <- df %>%
-  arrange(year) %>%
-  slice(1, n()) %>%
-  mutate(t_diff = 0,
-         x = year + c(-5, 5))
-
-max_t_diff <- format(round(max(df$temp), 1), nsmall=1)
-
 df %>%
   ggplot(aes(x=year, y=temp, fill=temp)) +
   geom_col(show.legend=FALSE) +

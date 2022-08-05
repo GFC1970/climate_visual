@@ -54,7 +54,6 @@ theme_gfc <- function() {
       # Panel
       panel.border = element_blank(),
       panel.grid = element_blank(),
-      panel.grid.major.y = element_line(colour = "lightgrey", size = .3),
 
       # Axis
       axis.line.x = element_line(size = .4)

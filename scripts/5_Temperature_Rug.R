@@ -38,6 +38,7 @@ season_data %>%
   labs(
     title = "Annual Temperature Anomoly by Season 1880 - 2021",
     subtitle = "Most recent year shown with coloured bar",
+    caption = "Data source: NASA's Goddard Institute for Space Studies (GISS).\nCredit: NASA/GISS",
     x = "Temperatue Anomoly (\u00B0C)",
     y = NULL
   )
